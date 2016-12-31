@@ -1,13 +1,13 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { GameComponent } from './game/game.component'
 
-import { LoginComponent } from './facebook-login/login.component';
 
 @NgModule({
   declarations: [
     MyApp,
-    LoginComponent
+    GameComponent
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -15,7 +15,7 @@ import { LoginComponent } from './facebook-login/login.component';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    LoginComponent
+    GameComponent
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
