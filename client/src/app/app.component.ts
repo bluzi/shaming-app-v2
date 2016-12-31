@@ -9,7 +9,7 @@ import { GameComponent } from './game/game.component';
   providers: [FacebookService]
 })
 export class MyApp implements OnInit{
-  rootPage = GameComponent;
+  rootPage = null;
 
   constructor(private fb: FacebookService, platform: Platform) {
     platform.ready().then(() => {
@@ -32,7 +32,7 @@ export class MyApp implements OnInit{
 
   private fbLogin() {
     this.fb.login().then(
-    (response: FacebookLoginResponse) => console.log(response),
+    (response: FacebookLoginResponse) => this.rootPage = GameComponent,
     (error: any) => console.error(error));
   }
 
@@ -44,6 +44,8 @@ export class MyApp implements OnInit{
 
         if (!isConnected)
           this.fbLogin();
+        else
+          this.rootPage = GameComponent;
       });
     }
 }
