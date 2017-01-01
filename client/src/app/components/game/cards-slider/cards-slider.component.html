@@ -1,0 +1,5 @@
+<ion-slides #slider (ionWillChange)="onSlideChanged()">
+  <ion-slide *ngFor="let friend of friends">
+     <card-details [friend]="friend"></card-details> 
+  </ion-slide>
+</ion-slides>
