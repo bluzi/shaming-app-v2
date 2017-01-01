@@ -6,6 +6,7 @@ import { GameComponent } from './components/game/game.component'
 import { AboutMeTabComponent } from './components/game/tabs/about-me-tab.component';
 import { AboutThemTabComponent } from './components/game/tabs/about-them-tab.component';
 import { AboutThemCardDetailsComponent } from './components/game/cards/about-them-card-details.component';
+import { CardsSliderComponent } from './components/game/cards-slider/cards-slider.component';
 
 
 
@@ -15,7 +16,8 @@ import { AboutThemCardDetailsComponent } from './components/game/cards/about-the
     GameComponent,
     AboutMeTabComponent,
     AboutThemTabComponent,
-    AboutThemCardDetailsComponent
+    AboutThemCardDetailsComponent,
+    CardsSliderComponent
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -26,7 +28,8 @@ import { AboutThemCardDetailsComponent } from './components/game/cards/about-the
     GameComponent,
     AboutMeTabComponent,
     AboutThemTabComponent,
-    AboutThemCardDetailsComponent
+    AboutThemCardDetailsComponent,
+    CardsSliderComponent
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

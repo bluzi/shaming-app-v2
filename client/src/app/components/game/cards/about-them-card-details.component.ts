@@ -1,18 +1,11 @@
-import { Component } from '@angular/core';
-import { Friend, Gender } from '../../../models/friend';
-import {FriendsService} from '../../../services/friends.service';
+import { Component, Input } from '@angular/core';
+import { Friend } from '../../../models/friend';
 
 @Component({
     templateUrl: 'about-them-card-details.html',
     selector: 'card-details',
-    providers: [FriendsService]
 })
-
 export class AboutThemCardDetailsComponent {
+    @Input()
     friend: Friend;
-    constructor(private friendsService: FriendsService) {
-        friendsService.getNextFriend().then((friend) => {
-            this.friend = friend;
-        });
-    }
 }
