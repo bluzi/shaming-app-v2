@@ -1,12 +1,12 @@
 <ion-card>
-  <img src="http://combiboilersleeds.com/images/person/person-5.jpg"/>
+  <img [src]="friend.picture"/>
   <ion-card-content>
     <ion-card-title>
-      {{ friend.name }} ({{ friend.age }} years old)
+      {{ friend.name }}
       </ion-card-title>
       <ion-item>
         <ion-label></ion-label>
-        <ion-textarea rows="8" placeholder="What do you think of {{friendGenderStr}}?"></ion-textarea>
+        <ion-textarea rows="8" placeholder="What do you think of?"></ion-textarea>
       </ion-item>
   </ion-card-content>
 </ion-card>

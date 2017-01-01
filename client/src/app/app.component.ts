@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
-import {FacebookService, FacebookLoginResponse, FacebookInitParams} from 'ng2-facebook-sdk';
+import {FacebookService, FacebookLoginResponse, FacebookInitParams, FacebookLoginOptions} from 'ng2-facebook-sdk';
 import { GameComponent } from './components/game/game.component';
 
 @Component({
@@ -31,7 +31,11 @@ export class MyApp implements OnInit{
   }
 
   private fbLogin() {
-    this.fb.login().then(
+    let fbOptions: FacebookLoginOptions = {
+      scope: 'user_friends'
+    };
+
+    this.fb.login(fbOptions).then(
     (response: FacebookLoginResponse) => this.rootPage = GameComponent,
     (error: any) => console.error(error));
   }

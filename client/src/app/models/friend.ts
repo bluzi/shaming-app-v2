@@ -1,7 +1,8 @@
 export interface Friend {
     name: string;
-    age: number;
-    gender: Gender;
+    // age: number;
+    picture: string;
+    // gender: Gender;
 }
 
 export enum Gender {
