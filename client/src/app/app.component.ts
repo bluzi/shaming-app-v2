@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 import {FacebookService, FacebookLoginResponse, FacebookInitParams} from 'ng2-facebook-sdk';
-import { GameComponent } from './game/game.component';
+import { GameComponent } from './components/game/game.component';
 
 @Component({
   templateUrl: 'app.html',
