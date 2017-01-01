@@ -9,10 +9,16 @@ import {FacebookService, FacebookInitParams} from 'ng2-facebook-sdk';
 export class FriendsService {
     friends: Friend[];
     currentFriendIndex: number;
+    getFriendsPromise: Promise<any>;
 
     constructor(private fb: FacebookService, private http: Http) {
         this.friends = [];
-        fb.api('/me/taggable_friends').then(response => {
+        this.currentFriendIndex = 0;
+
+        this.getFriendsPromise = this.fb.api('/me/taggable_friends', "get", {
+            fields: 'name,picture.width(200).height(200)'
+        })
+        .then(response => {
             let facebookResponse = (<FacebookResponse.FacebookFriendsResponse>response);
             this.addFriends(facebookResponse);
         });
@@ -35,12 +41,11 @@ export class FriendsService {
     }
 
     getNextFriend(): Promise<Friend> {
-        if (this.currentFriendIndex >= this.friends.length) 
-            this.currentFriendIndex = 0;
+        return this.getFriendsPromise.then(() => {
+            if (this.currentFriendIndex >= this.friends.length) 
+                this.currentFriendIndex = 0;
 
-        return new Promise<Friend>((resolve, reject) => {
-            resolve.
+            return this.friends[this.currentFriendIndex++];
         });
-        //return this.friends[this.currentFriendIndex++];
     }
 }

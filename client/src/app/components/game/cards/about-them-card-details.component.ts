@@ -11,6 +11,8 @@ import {FriendsService} from '../../../services/friends.service';
 export class AboutThemCardDetailsComponent {
     friend: Friend;
     constructor(private friendsService: FriendsService) {
-        this.friend = friendsService.getNextFriend();
+        friendsService.getNextFriend().then((friend) => {
+            this.friend = friend;
+        });
     }
 }
