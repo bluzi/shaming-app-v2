@@ -1,11 +1,11 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { GameComponent } from './game/game.component'
+import { GameComponent } from './components/game/game.component'
 
-import { AboutMeTabComponent } from './game/tabs/about-me-tab.component';
-import { AboutThemTabComponent } from './game/tabs/about-them-tab.component';
-import { AboutThemCardDetailsComponent } from './game/cards/about-them-card-details.component';
+import { AboutMeTabComponent } from './components/game/tabs/about-me-tab.component';
+import { AboutThemTabComponent } from './components/game/tabs/about-them-tab.component';
+import { AboutThemCardDetailsComponent } from './components/game/cards/about-them-card-details.component';
 
 
 
