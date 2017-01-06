@@ -40,6 +40,10 @@ export class FriendsService {
         }
     }
 
+    getAllFriends(): Promise<Friend[]> {
+        return this.getFriendsPromise.then(() => this.friends);
+    }
+
     getNextFriend(): Promise<Friend> {
         return this.getFriendsPromise.then(() => {
             if (this.currentFriendIndex >= this.friends.length) 
@@ -47,5 +51,9 @@ export class FriendsService {
 
             return this.friends[this.currentFriendIndex++];
         });
+    }
+
+    getFriendsByName(name: string): Promise<Friend[]> {
+        return this.getFriendsPromise.then(() => this.friends.filter(friend => friend.name.toLowerCase().startsWith(name.toLowerCase())));
     }
 }

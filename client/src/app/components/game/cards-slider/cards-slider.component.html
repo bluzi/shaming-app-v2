@@ -1,4 +1,5 @@
-<ion-slides #slider (ionWillChange)="onSlideChanged()">
+<ion-searchbar #name (keypress)="resetSlideIndex()"></ion-searchbar>
+<ion-slides #slider (ionWillChange)="onSlideChanged()" (ionDrag)="checkSlideStatus()">
   <ion-slide *ngFor="let friend of friends">
      <card-details [friend]="friend"></card-details> 
   </ion-slide>
