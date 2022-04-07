@@ -21,12 +21,12 @@
     "gulp-develop-server": "^0.5.0",
     "gulp-mocha": "^2.2.0",
     "gulp-typescript": "^2.10.0",
-    "hbs": "~3.1.0",
+    "hbs": "~4.0.1",
     "morgan": "~1.6.1",
     "q": "^1.4.1",
     "serve-favicon": "~2.3.0",
     "superagent": "^1.7.1",
-    "tsd": "^0.6.5",
+    "tsd": "^0.7.0",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
